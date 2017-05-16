@@ -1,10 +1,8 @@
 import javax.swing.*;
-import java.io.File;
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.MalformedURLException;
-import java.net.Socket;
-import java.net.URL;
+import java.awt.*;
+import java.awt.event.*;
+import java.io.*;
+import java.net.*;
 import java.nio.file.*;
 
 public class ClientFrame extends JFrame {
@@ -34,6 +32,15 @@ public class ClientFrame extends JFrame {
     static JTextField tf_username;
     private GroupLayout layout;
 
+    // those final variable are used in processInput method to keep track of the state
+    private static final int TERMS_ACCEPT_OR_NOT = 1;
+    private static final int TERMS_ACCEPTED = 2;
+    private static final int DOWNLOADED_OR_NOTDOWNLOADED = 3;
+    private static final int TERMINATED = 4;
+
+    private static int state = TERMS_ACCEPT_OR_NOT;             // initially, the question to accept the terms or not
+    // is already displayed, thus state = TERMS_ACCEPT_OR_NOT
+
     // constructor
     ClientFrame() {
         initComponents();
@@ -50,8 +57,8 @@ public class ClientFrame extends JFrame {
         @Override
         public void run() {
             // we start by displaying this to the client
-            ta_chat.append("Server: Hello "+tf_username.getText()+"....It's very nice to see you here...\n");
-            ta_chat.append("Server: Here are the terms of reference. Do you accept? yes or no");
+            ta_chat.append("Server: Hello " + tf_username.getText() + "....It's very nice to see you here...\n");
+            ta_chat.append("Server: Here Are The Terms of Service. Do you accept? yes or no");
         }
     }
 
@@ -77,26 +84,26 @@ public class ClientFrame extends JFrame {
 
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         setTitle("The Client");
-        setName("client"); // NOI18N
+        setName("client");
         setResizable(false);
 
         lb_address.setText("Address : ");
-        tf_address.setText("localhost");
+        tf_address.setText("172.16.13.238");
         lb_port.setText("Port :");
         tf_port.setText("9999");
         lb_username.setText("Username :");
         lb_password.setText("Password : ");
         b_connect.setText("Connect");
 
-        b_connect.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        b_connect.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 b_connectActionPerformed(evt);
             }
         });
 
         b_disconnect.setText("Disconnect");
-        b_disconnect.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        b_disconnect.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 b_disconnectActionPerformed(evt);
             }
         });
@@ -111,82 +118,82 @@ public class ClientFrame extends JFrame {
 
         b_send.setText("SEND");
         b_send.setEnabled(false);
-        b_send.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
+        b_send.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
                 b_sendActionPerformed(evt);
             }
         });
 
         lb_name.setText("© rabia-soft.com ©");
-        lb_name.setBorder(BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        lb_name.setBorder(BorderFactory.createLineBorder(new Color(0, 0, 0)));
 
         layout = new GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
                                 .addContainerGap()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
-                                                .addComponent(tf_chat, javax.swing.GroupLayout.PREFERRED_SIZE, 352, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                .addComponent(b_send, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                .addComponent(tf_chat, GroupLayout.PREFERRED_SIZE, 352, GroupLayout.PREFERRED_SIZE)
+                                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                .addComponent(b_send, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                                        .addComponent(lb_username, javax.swing.GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
-                                                                        .addComponent(lb_address, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                                        .addComponent(jScrollPane1, GroupLayout.Alignment.LEADING)
+                                                        .addGroup(GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.TRAILING, false)
+                                                                        .addComponent(lb_username, GroupLayout.DEFAULT_SIZE, 62, Short.MAX_VALUE)
+                                                                        .addComponent(lb_address, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING, false)
                                                                         .addComponent(tf_address)
-                                                                        .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                                        .addComponent(tf_username, GroupLayout.PREFERRED_SIZE, 89, GroupLayout.PREFERRED_SIZE))
                                                                 .addGap(18, 18, 18)
                                                                 .addComponent(lb_port)
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                                .addComponent(tf_port, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(LayoutStyle.ComponentPlacement.UNRELATED)
+                                                                .addComponent(tf_port, GroupLayout.PREFERRED_SIZE, 47, GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(29, 29, 29)
-                                                                .addComponent(b_connect, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(b_connect, GroupLayout.PREFERRED_SIZE, 81, GroupLayout.PREFERRED_SIZE)
                                                                 .addGap(18, 18, 18)
                                                                 .addComponent(b_disconnect)))
                                                 .addGap(0, 0, Short.MAX_VALUE)))
                                 .addContainerGap())
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addContainerGap(GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lb_name)
                                 .addGap(236, 236, 236))
         );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
                                         .addGroup(layout.createSequentialGroup()
                                                 .addContainerGap()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                .addComponent(b_disconnect, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                                .addComponent(b_connect, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                                .addComponent(b_disconnect, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE)
+                                                                .addComponent(b_connect, GroupLayout.PREFERRED_SIZE, 55, GroupLayout.PREFERRED_SIZE))
                                                         .addGroup(layout.createSequentialGroup()
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                                         .addComponent(lb_address)
-                                                                        .addComponent(tf_address, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                                                        .addComponent(tf_username, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                        .addComponent(tf_address, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))
+                                                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED)
+                                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                                                        .addComponent(tf_username, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
                                                                         .addComponent(lb_username)))))
                                         .addGroup(layout.createSequentialGroup()
                                                 .addGap(28, 28, 28)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
                                                         .addComponent(lb_port)
-                                                        .addComponent(tf_port, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                        .addComponent(tf_port, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE))))
                                 .addGap(18, 18, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 208, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane1, GroupLayout.PREFERRED_SIZE, 208, GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                        .addComponent(tf_chat, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(b_send, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(GroupLayout.Alignment.BASELINE)
+                                        .addComponent(tf_chat, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(b_send, GroupLayout.PREFERRED_SIZE, 39, GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(LayoutStyle.ComponentPlacement.RELATED, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(lb_name))
         );
 
@@ -194,14 +201,44 @@ public class ClientFrame extends JFrame {
 
     }
 
-    // to disconnect, it's called when DISCONNECT button is pressed
-    private void disconnect(int ope){
-        try {
-            if (ope == 0){
-                writer.println(username + ": is disconnected.:Disconnect");     // we broadcast this message so the server
-                writer.flush();                                                 // can listen to it
-                sock.close();
+    // when CONNECT button is pressed
+    private void b_connectActionPerformed(ActionEvent evt) {
+
+        if (!isConnected) {
+            // if not connected and username is not entered, and he tried to connect we display a dialog box telling
+            // him/her to enter a name
+            if (tf_username.getText().isEmpty())
+                JOptionPane.showMessageDialog(getContentPane(), "Enter a user name please");
+
+                // if username is entered
+            else {
+                username = tf_username.getText();               // get username
+                tf_username.setEditable(false);                 // disable username textField
+                b_send.setEnabled(true);                        // enable SEND button
+                try {
+                    sock = new Socket("172.16.13.238", 9999);               // initiate sock with specific address and port number
+                    writer = new PrintWriter(sock.getOutputStream());
+                    writer.println(username + ": is connected.:Connect");   // broadcast the message
+                    writer.flush();                                         // flush it
+                    isConnected = true;
+                    b_connect.setEnabled(false);                            // disable CONNECT button
+                } catch (Exception ex) {
+                    ta_chat.append("Cannot Connect! Try Again. \n");
+                    tf_username.setEditable(true);
+                }
+
+                ListenThread();
             }
+
+        }
+    }
+
+    // when DISCONNECT button is pressed
+    private void b_disconnectActionPerformed(ActionEvent evt) {
+        try {
+            writer.println(username + ": is disconnected. :Disconnect");     // we broadcast this message so the server
+            writer.flush();                                                 // can listen to it
+            sock.close();
 
             ta_chat.setText("");                                            // clear the chat box
             b_connect.setEnabled(true);                                     // enable CONNECT button
@@ -215,45 +252,8 @@ public class ClientFrame extends JFrame {
         }
     }
 
-    // when DISCONNECT button is pressed
-    private void b_disconnectActionPerformed(java.awt.event.ActionEvent evt) {
-        disconnect(0);
-    }
-
-    // when CONNECT button is pressed
-    private void b_connectActionPerformed(java.awt.event.ActionEvent evt) {
-
-        if (!isConnected) {
-            // if not connected and username is not entered, and he tried to connect we display a dialog box telling
-            // him/her to enter a name
-            if (tf_username.getText().isEmpty())
-                JOptionPane.showMessageDialog(getContentPane(), "Enter a user name please");
-
-            // if username is entered
-            else {
-                username = tf_username.getText();               // get username
-                tf_username.setEditable(false);                 // disable username textField
-                b_send.setEnabled(true);                        // enable SEND button
-                try {
-                    sock = new Socket("localhost", 9999);       // initiate sock with specific address and port number
-                    writer = new PrintWriter(sock.getOutputStream());
-                    writer.println(username + ": is connected.:Connect");       // broadcast the message
-                    writer.flush();                                             // flush it
-                    isConnected = true;
-                    b_connect.setEnabled(false);                                // disable CONNECT button
-                } catch (Exception ex) {
-                    ta_chat.append("Cannot Connect! Try Again. \n");
-                    tf_username.setEditable(true);
-                }
-
-                ListenThread();
-            }
-
-        }
-    }
-
     // when SEND button is pressed
-    private void b_sendActionPerformed(java.awt.event.ActionEvent evt) {
+    private void b_sendActionPerformed(ActionEvent evt) {
         String inputTextField;                      // input from client
         if ((tf_chat.getText()).equals("")) {       // check if input field is empty (we cannot send empty string)
             tf_chat.setText("");
@@ -293,15 +293,6 @@ public class ClientFrame extends JFrame {
         tf_chat.setText("");
         tf_chat.requestFocus();
     }
-
-    // those final variable are used in processInput method to keep track of the state
-    private static final int TERMS_ACCEPT_OR_NOT = 1;
-    private static final int TERMS_ACCEPTED = 2;
-    private static final int DOWNLOADED_OR_NOTDOWNLOADED = 3;
-    private static final int TERMINATED = 4;
-
-    private static int state = TERMS_ACCEPT_OR_NOT;             // initially, the question to accept the terms or not
-                                                                // is already displayed, thus state = TERMS_ACCEPT_OR_NOT
 
     // this to process the input from tf_chat when SEND button is pressed
     private void processInput(String theInput) throws MalformedURLException {
@@ -372,10 +363,9 @@ public class ClientFrame extends JFrame {
 
     // this is to download a file
     private void downloadFile(String fileName) {
-        // source link
-        String sourceURL = "https://github.com/bismarabia/Calculator_app/archive/master.zip";
-
         try {
+            // source link
+            String sourceURL = "https://github.com/bismarabia/Calculator_app/archive/master.zip";
             URL website = new URL(sourceURL);
             Path targetPath = new File("E://" + File.separator + fileName).toPath();            // path where to save
             Files.copy(website.openStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);  // save the file
@@ -395,7 +385,7 @@ public class ClientFrame extends JFrame {
 
     // main method
     public static void main(String args[]) {
-        java.awt.EventQueue.invokeLater(new Runnable() {
+        EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
                 new ClientFrame().setVisible(true);

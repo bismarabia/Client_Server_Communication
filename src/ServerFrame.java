@@ -1,4 +1,5 @@
 import javax.swing.*;
+import java.awt.event.*;
 import java.io.*;
 import java.net.*;
 import java.util.*;
@@ -25,11 +26,11 @@ public class ServerFrame extends JFrame {
 
     // constructor
     private ServerFrame() {
-        initComponents();
+        initGUI();
     }
 
     // the method is to initiate components of the GUI
-    private void initComponents() {
+    private void initGUI() {
 
         jScrollPane1 = new JScrollPane();
         ta_chat = new JTextArea();
@@ -148,15 +149,13 @@ public class ServerFrame extends JFrame {
     // this is to handle the clients' requests
     private class ClientHandler implements Runnable {
         BufferedReader reader;
-        Socket sock;
 
         PrintWriter client;
 
-        public ClientHandler(Socket clientSocket, PrintWriter user) {
+        ClientHandler(Socket clientSocket, PrintWriter user) {
             client = user;
             try {
-                sock = clientSocket;
-                InputStreamReader isReader = new InputStreamReader(sock.getInputStream());
+                InputStreamReader isReader = new InputStreamReader(clientSocket.getInputStream());
                 reader = new BufferedReader(isReader);
             } catch (Exception ex) {
                 ta_chat.append("Unexpected error while handling client... \n");
@@ -217,24 +216,6 @@ public class ServerFrame extends JFrame {
 
     }
 
-    // when END button is clicked
-    private void b_endActionPerformed(java.awt.event.ActionEvent evt) {
-        try {
-            ta_chat.setText("Server Has Stopped....Bye!!!\n");
-            Thread.sleep(2000);                 //2000 milliseconds is two second.
-            clientSock.close();                 // close client's socket
-            System.out.println("before");
-            resetClientWindow();                // reset client's window
-            System.out.println("after");
-        } catch (InterruptedException ex) {
-            Thread.currentThread().interrupt();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        ta_chat.setText("");                    // clear the chat box
-    }
-
     // reset client's window when END buttin is clicked
     private void resetClientWindow() {
         //ClientFrame clientFrame = new ClientFrame();
@@ -243,7 +224,7 @@ public class ServerFrame extends JFrame {
     }
 
     // this is when START button is clicked
-    private void b_startActionPerformed(java.awt.event.ActionEvent evt) {
+    private void b_startActionPerformed(ActionEvent evt) {
         Thread starter = new Thread(new ServerStart());             // create the thread
         starter.start();                                            // start the thread
 
@@ -252,7 +233,7 @@ public class ServerFrame extends JFrame {
 
     // This is when ONLINE USERS button is clicked
     // It displays the online users
-    private void b_usersActionPerformed(java.awt.event.ActionEvent evt) {
+    private void b_usersActionPerformed(ActionEvent evt) {
         ta_chat.append("Online users : \n");
         for (int i = 0; i < users.size(); i++)
             ta_chat.append("\t" + (i + 1) + ") " + users.get(i) + "\n");
@@ -261,8 +242,26 @@ public class ServerFrame extends JFrame {
     }
 
     // this is when CLEAR button is clicked
-    private void b_clearActionPerformed(java.awt.event.ActionEvent evt) {
+    private void b_clearActionPerformed(ActionEvent evt) {
         ta_chat.setText("");
+    }
+
+    // when END button is clicked
+    private void b_endActionPerformed(ActionEvent evt) {
+        try {
+            ta_chat.setText("Server Has Stopped....Bye!!!\n");
+            Thread.sleep(2000);                 //2000 milliseconds is two second.
+            clientSock.close();                 // close client's socket
+            System.out.println("before");
+            new ClientFrame().dispose();                // reset client's window
+            System.out.println("after");
+        } catch (InterruptedException ex) {
+            Thread.currentThread().interrupt();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        ta_chat.setText("");                    // clear the chat box
     }
 
     // this is to add a client when he joined the server
