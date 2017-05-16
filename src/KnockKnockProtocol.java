@@ -29,65 +29,94 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */ 
 
-import java.net.*;
-import java.io.*;
-
 public class KnockKnockProtocol {
     private static final int WAITING = 0;
-    private static final int SENTKNOCKKNOCK = 1;
-    private static final int SENTCLUE = 2;
-    private static final int ANOTHER = 3;
+    private static final int ACKNOWLEDGMENTSENT = 1;
+    private static final int ACKNOWLEDGED = 2;
+    private static final int TERMSNOTACCEPTED = 3;
+    private static final int DOWNLOADING = 4;
 
-    private static final int NUMJOKES = 5;
+    private static final int DONE = 5;
+    private static final int TERMINATED = 5;
 
     private int state = WAITING;
-    private int currentJoke = 0;
 
-    private String[] clues = { "Turnip", "Little Old Lady", "Atch", "Who", "Who" };
-    private String[] answers = { "Turnip the heat, it's cold in here!",
-                                 "I didn't know you could yodel!",
-                                 "Bless you!",
-                                 "Is there an owl in here?",
-                                 "Is there an echo in here?" };
-
-    public String processInput(String theInput) {
+    String processInput(String theInput) {
         String theOutput = null;
 
-        if (state == WAITING) {
-            theOutput = "Knock! Knock!";
-            state = SENTKNOCKKNOCK;
-        } else if (state == SENTKNOCKKNOCK) {
-            if (theInput.equalsIgnoreCase("Who's there?")) {
-                theOutput = clues[currentJoke];
-                state = SENTCLUE;
-            } else {
-                theOutput = "You're supposed to say \"Who's there?\"! " +
-			    "Try again. Knock! Knock!";
-            }
-        } else if (state == SENTCLUE) {
-            if (theInput.equalsIgnoreCase(clues[currentJoke] + " who?")) {
-                theOutput = answers[currentJoke] + " Want another? (y/n)";
-                state = ANOTHER;
-            } else {
-                theOutput = "You're supposed to say \"" + 
-			    clues[currentJoke] + 
-			    " who?\"" + 
-			    "! Try again. Knock! Knock!";
-                state = SENTKNOCKKNOCK;
-            }
-        } else if (state == ANOTHER) {
-            if (theInput.equalsIgnoreCase("y")) {
-                theOutput = "Knock! Knock!";
-                if (currentJoke == (NUMJOKES - 1))
-                    currentJoke = 0;
-                else
-                    currentJoke++;
-                state = SENTKNOCKKNOCK;
-            } else {
-                theOutput = "Bye.";
-                state = WAITING;
-            }
+        switch(state){
+            case WAITING:
+                theOutput = "Here are the terms of reference. Do you accept? yes or no";
+                state = ACKNOWLEDGMENTSENT;
+                break;
+            case ACKNOWLEDGMENTSENT:
+                switch (theInput){
+                    case "yes":
+                        theOutput = " 1. iTune 2. ZoneAlarm 3. WinRar 4. Audacity Select a resource for downloading\n";
+                        state = ACKNOWLEDGED;
+                        break;
+                    case "no":
+                        theOutput = "Enter \"bye\" to exist, and \"enter\" to continue";
+                        state = TERMINATED;
+                        break;
+                    default:
+                        theOutput = "\nyou're supposed to enter yes or no";
+                        state = ACKNOWLEDGMENTSENT;
+                        break;
+                }
+                break;
+            case ACKNOWLEDGED:
+                switch (theInput){
+                    case "1":
+                        theOutput = " You are downloading iTune.zip ...";
+                        state = DOWNLOADING;
+                        break;
+                    case "2":
+                        theOutput = " You are downloading ZoneAlarm.zip ...";
+                        state = DOWNLOADING;
+                        break;
+                    case "3":
+                        theOutput = " You are downloading WinRar.zip ...";
+                        state = DOWNLOADING;
+                        break;
+                    case "4":
+                        theOutput = " You are downloading Audacity.zip ...";
+                        state = DOWNLOADING;
+                        break;
+                    default:
+                        theOutput = "you're supposed to enter either 1, 2, 3, or 4";
+                        state = ACKNOWLEDGED;
+                        break;
+                }
+                break;
+            case DOWNLOADING:
+                switch (theInput) {
+                    case "<CR>":
+                        theOutput = "Enter \"bye\" to exist, and \"enter\" to continue";
+                        state = TERMINATED;
+                        break;
+                    default:
+                        theOutput = "Enter \"bye\" to exist, and \"enter\" to continue";
+                        state = TERMINATED;
+                        break;
+                }
+                break;
+            case TERMINATED:
+                switch (theInput) {
+                    case "bye":
+                        state = DONE;
+                        break;
+                    case "enter":
+                        state = DOWNLOADING;
+                        break;
+                    default:
+                        theOutput = "Enter \"bye\" to exist, or \"enter\" to continue";
+                        state = TERMINATED;
+                        break;
+                }
+                break;
         }
+
         return theOutput;
     }
 }
