@@ -2,24 +2,32 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f4ab724d-5720-4a7e-9902-b8f29442da57" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/logo.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/BISMA.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChatActivity.form" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ChatActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ClientFrame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/GUInterface.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ServerClient.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/ServerFrame.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/Splash.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/KnockKnockClient.class" afterPath="$PROJECT_DIR$/out/production/CN project/KnockKnockClient.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/KnockKnockProtocol.class" afterPath="$PROJECT_DIR$/out/production/CN project/KnockKnockProtocol.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/KnockKnockServer.class" afterPath="$PROJECT_DIR$/out/production/CN project/KnockKnockServer.class" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ChatActivity.form" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ChatActivity.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/GUInterface.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/KnockKnockClient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/KnockKnockProtocol.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/KnockKnockServer.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ServerClient.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client.java" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/logo.png" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ClientFrame$1.class" afterPath="$PROJECT_DIR$/out/production/CN project/ClientFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ClientFrame$2.class" afterPath="$PROJECT_DIR$/out/production/CN project/ClientFrame$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ClientFrame$3.class" afterPath="$PROJECT_DIR$/out/production/CN project/ClientFrame$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ClientFrame$4.class" afterPath="$PROJECT_DIR$/out/production/CN project/ClientFrame$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ClientFrame$clientStart.class" afterPath="$PROJECT_DIR$/out/production/CN project/ClientFrame$clientStart.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ClientFrame.class" afterPath="$PROJECT_DIR$/out/production/CN project/ClientFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ServerFrame$1.class" afterPath="$PROJECT_DIR$/out/production/CN project/ServerFrame$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ServerFrame$2.class" afterPath="$PROJECT_DIR$/out/production/CN project/ServerFrame$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ServerFrame$3.class" afterPath="$PROJECT_DIR$/out/production/CN project/ServerFrame$3.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ServerFrame$4.class" afterPath="$PROJECT_DIR$/out/production/CN project/ServerFrame$4.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ServerFrame$ClientHandler.class" afterPath="$PROJECT_DIR$/out/production/CN project/ServerFrame$ClientHandler.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ServerFrame$ServerStart.class" afterPath="$PROJECT_DIR$/out/production/CN project/ServerFrame$ServerStart.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/CN project/ServerFrame.class" afterPath="$PROJECT_DIR$/out/production/CN project/ServerFrame.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/BISMA.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/BISMA.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KnockKnockClient.java" afterPath="$PROJECT_DIR$/src/KnockKnockClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KnockKnockProtocol.java" afterPath="$PROJECT_DIR$/src/KnockKnockProtocol.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/KnockKnockServer.java" afterPath="$PROJECT_DIR$/src/KnockKnockServer.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ClientFrame.java" afterPath="$PROJECT_DIR$/src/ClientFrame.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ServerFrame.java" afterPath="$PROJECT_DIR$/src/ServerFrame.java" />
     </list>
     <ignored path="CN project.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -35,6 +43,11 @@
     <option name="PATCH_PATH" value="" />
   </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
+  <component name="ExportToHTMLSettings">
+    <option name="printScope" value="1" />
+    <option name="OPEN_IN_BROWSER" value="true" />
+    <option name="OUTPUT_DIRECTORY" value="C:\Users\BISMA\CN project\exportToHTML" />
+  </component>
   <component name="FavoritesManager">
     <favorites_list name="CN project" />
   </component>
@@ -43,15 +56,19 @@
       <file leaf-file-name="ServerFrame.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ServerFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="217" column="5" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
+            <state relative-caret-position="1003">
+              <caret line="260" column="38" selection-start-line="260" selection-start-column="38" selection-end-line="260" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="method#initComponents#0;class#ServerFrame#0" expanded="false" />
+                <element signature="method#initGUIServer#0;class#ServerFrame#0" expanded="false" />
+                <element signature="class#2031:2207" expanded="false" />
+                <element signature="e#2137#2138#0" expanded="true" />
+                <element signature="e#2196#2197#0" expanded="true" />
+                <element signature="class#2287:2461" expanded="false" />
+                <element signature="class#2554:2730" expanded="false" />
+                <element signature="class#2816:2992" expanded="false" />
                 <element signature="class#ServerStart#0;class#ServerFrame#0" expanded="false" />
                 <element signature="class#ClientHandler#0;class#ServerFrame#0" expanded="false" />
-                <element signature="method#b_endActionPerformed#0;class#ServerFrame#0" expanded="false" />
-                <element signature="method#resetClientWindow#0;class#ServerFrame#0" expanded="false" />
                 <element signature="method#b_startActionPerformed#0;class#ServerFrame#0" expanded="false" />
                 <element signature="method#b_usersActionPerformed#0;class#ServerFrame#0" expanded="false" />
                 <element signature="method#main#0;class#ServerFrame#0" expanded="false" />
@@ -63,15 +80,17 @@
       <file leaf-file-name="ClientFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="434">
-              <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+            <state relative-caret-position="17">
+              <caret line="344" column="17" selection-start-line="344" selection-start-column="17" selection-end-line="344" selection-end-column="17" />
               <folding>
-                <element signature="method#initComponents#0;class#ClientFrame#0" expanded="false" />
-                <element signature="method#disconnect#0;class#ClientFrame#0" expanded="false" />
+                <element signature="imports" expanded="true" />
+                <element signature="class#clientStart#0;class#ClientFrame#0" expanded="false" />
+                <element signature="method#initGUIClient#0;class#ClientFrame#0" expanded="false" />
+                <element signature="class#3229:3377" expanded="false" />
+                <element signature="class#3478:3629" expanded="false" />
+                <element signature="class#4018:4163" expanded="false" />
                 <element signature="method#b_connectActionPerformed#0;class#ClientFrame#0" expanded="false" />
-                <element signature="method#b_sendActionPerformed#0;class#ClientFrame#0" expanded="false" />
-                <element signature="method#processInput#0;class#ClientFrame#0" expanded="false" />
-                <element signature="method#downloadFile#0;class#ClientFrame#0" expanded="false" />
+                <element signature="method#b_disconnectActionPerformed#0;class#ClientFrame#0" expanded="false" />
                 <element signature="method#main#0;class#ClientFrame#0" expanded="false" />
               </folding>
             </state>
@@ -97,10 +116,16 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="package-info" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="Rabia Abismail &lt;abismail2010@gmail.com&gt;" />
+      </list>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GradleLocalSettings">
@@ -124,8 +149,8 @@
         <option value="$PROJECT_DIR$/src/Splash.java" />
         <option value="$PROJECT_DIR$/src/client_frame.java" />
         <option value="$PROJECT_DIR$/src/server_frame.java" />
-        <option value="$PROJECT_DIR$/src/ServerFrame.java" />
         <option value="$PROJECT_DIR$/src/ClientFrame.java" />
+        <option value="$PROJECT_DIR$/src/ServerFrame.java" />
       </list>
     </option>
   </component>
@@ -160,12 +185,43 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
-        <subPane />
+        <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CN project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CN project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CN project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CN project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="CN project" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+        </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -568,31 +624,39 @@
       <option name="presentableId" value="Default" />
       <updated>1494008001709</updated>
     </task>
+    <task id="LOCAL-00001" summary="another commit include some bug fixes">
+      <created>1494959855532</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1494959855533</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17546584" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5046584" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.38509318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32919255" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20058565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20058565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17546584" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -637,9 +701,13 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="another commit include some bug fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="another commit include some bug fixes" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -650,15 +718,70 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/ServerFrame.java">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#initGUIServer#0;class#ServerFrame#0" expanded="false" />
+            <element signature="class#2031:2207" expanded="false" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2196#2197#0" expanded="true" />
+            <element signature="class#2287:2461" expanded="false" />
+            <element signature="class#2554:2730" expanded="false" />
+            <element signature="class#2816:2992" expanded="false" />
+            <element signature="class#ServerStart#0;class#ServerFrame#0" expanded="false" />
+            <element signature="class#ClientHandler#0;class#ServerFrame#0" expanded="false" />
+            <element signature="method#b_startActionPerformed#0;class#ServerFrame#0" expanded="false" />
+            <element signature="method#b_usersActionPerformed#0;class#ServerFrame#0" expanded="false" />
+            <element signature="method#main#0;class#ServerFrame#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1258">
+          <caret line="239" column="46" selection-start-line="239" selection-start-column="46" selection-end-line="239" selection-end-column="71" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="class#clientStart#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#initGUIClient#0;class#ClientFrame#0" expanded="false" />
+            <element signature="class#3229:3377" expanded="false" />
+            <element signature="class#3478:3629" expanded="false" />
+            <element signature="class#4018:4163" expanded="false" />
+            <element signature="method#b_connectActionPerformed#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#b_disconnectActionPerformed#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#main#0;class#ClientFrame#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Splash.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding>
+            <element signature="method#Splash#0;class#Splash#0" expanded="false" />
+            <element signature="method#initComponents#0;class#Splash#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ServerFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="799">
           <caret line="172" column="0" selection-start-line="172" selection-start-column="0" selection-end-line="172" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initComponents#0;class#ServerFrame#0" expanded="false" />
+            <element signature="method#initGUIServer#0;class#ServerFrame#0" expanded="false" />
+            <element signature="class#2031:2207" expanded="false" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2196#2197#0" expanded="true" />
+            <element signature="class#2287:2461" expanded="false" />
+            <element signature="class#2554:2730" expanded="false" />
+            <element signature="class#2816:2992" expanded="false" />
             <element signature="class#ServerStart#0;class#ServerFrame#0" expanded="false" />
             <element signature="class#ClientHandler#0;class#ServerFrame#0" expanded="false" />
-            <element signature="method#b_endActionPerformed#0;class#ServerFrame#0" expanded="false" />
-            <element signature="method#resetClientWindow#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#b_startActionPerformed#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#b_usersActionPerformed#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#main#0;class#ServerFrame#0" expanded="false" />
@@ -671,12 +794,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#initComponents#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#disconnect#0;class#ClientFrame#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="class#clientStart#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#initGUIClient#0;class#ClientFrame#0" expanded="false" />
+            <element signature="class#3229:3377" expanded="false" />
+            <element signature="class#3478:3629" expanded="false" />
+            <element signature="class#4018:4163" expanded="false" />
             <element signature="method#b_connectActionPerformed#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#b_sendActionPerformed#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#processInput#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#downloadFile#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#b_disconnectActionPerformed#0;class#ClientFrame#0" expanded="false" />
             <element signature="method#main#0;class#ClientFrame#0" expanded="false" />
           </folding>
         </state>
@@ -697,9 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2907">
           <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding>
-            <element signature="e#6758#6759#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -709,11 +831,15 @@
           <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initComponents#0;class#ServerFrame#0" expanded="false" />
+            <element signature="method#initGUIServer#0;class#ServerFrame#0" expanded="false" />
+            <element signature="class#2031:2207" expanded="false" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2196#2197#0" expanded="true" />
+            <element signature="class#2287:2461" expanded="false" />
+            <element signature="class#2554:2730" expanded="false" />
+            <element signature="class#2816:2992" expanded="false" />
             <element signature="class#ServerStart#0;class#ServerFrame#0" expanded="false" />
             <element signature="class#ClientHandler#0;class#ServerFrame#0" expanded="false" />
-            <element signature="method#b_endActionPerformed#0;class#ServerFrame#0" expanded="false" />
-            <element signature="method#resetClientWindow#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#b_startActionPerformed#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#b_usersActionPerformed#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#main#0;class#ServerFrame#0" expanded="false" />
@@ -726,12 +852,14 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="method#initComponents#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#disconnect#0;class#ClientFrame#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="class#clientStart#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#initGUIClient#0;class#ClientFrame#0" expanded="false" />
+            <element signature="class#3229:3377" expanded="false" />
+            <element signature="class#3478:3629" expanded="false" />
+            <element signature="class#4018:4163" expanded="false" />
             <element signature="method#b_connectActionPerformed#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#b_sendActionPerformed#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#processInput#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#downloadFile#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#b_disconnectActionPerformed#0;class#ClientFrame#0" expanded="false" />
             <element signature="method#main#0;class#ClientFrame#0" expanded="false" />
           </folding>
         </state>
@@ -934,13 +1062,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/Desktop/Chat_Server/src/chat_server/server_frame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="335">
-          <caret line="273" column="17" selection-start-line="273" selection-start-column="17" selection-end-line="273" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/Documents/NetBeansProjects/server-client/src/server/client/server_frame.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="145">
@@ -967,17 +1088,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="333" column="0" selection-start-line="333" selection-start-column="0" selection-end-line="448" selection-end-column="0" />
-          <folding>
-            <element signature="method#writeUsers#0;class#client#0" expanded="false" />
-            <element signature="method#sendDisconnect#0;class#client#0" expanded="false" />
-            <element signature="method#Disconnect#0;class#client#0" expanded="false" />
-            <element signature="method#initComponents#0;class#client#0" expanded="false" />
-            <element signature="method#b_disconnectActionPerformed#0;class#client#0" expanded="false" />
-            <element signature="method#b_anonymousActionPerformed#0;class#client#0" expanded="false" />
-            <element signature="method#b_connectActionPerformed#0;class#client#0" expanded="false" />
-            <element signature="method#processInput#0;class#client#0" expanded="false" />
-            <element signature="method#main#0;class#client#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1013,9 +1124,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2907">
           <caret line="216" column="0" selection-start-line="216" selection-start-column="0" selection-end-line="216" selection-end-column="0" />
-          <folding>
-            <element signature="e#6758#6759#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1030,17 +1138,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/Chat_Server/src/chat_server/server_frame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-801">
+          <caret line="12" column="3" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ServerFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="217" column="5" selection-start-line="217" selection-start-column="5" selection-end-line="217" selection-end-column="5" />
+        <state relative-caret-position="1003">
+          <caret line="260" column="38" selection-start-line="260" selection-start-column="38" selection-end-line="260" selection-end-column="38" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="method#initComponents#0;class#ServerFrame#0" expanded="false" />
+            <element signature="method#initGUIServer#0;class#ServerFrame#0" expanded="false" />
+            <element signature="class#2031:2207" expanded="false" />
+            <element signature="e#2137#2138#0" expanded="true" />
+            <element signature="e#2196#2197#0" expanded="true" />
+            <element signature="class#2287:2461" expanded="false" />
+            <element signature="class#2554:2730" expanded="false" />
+            <element signature="class#2816:2992" expanded="false" />
             <element signature="class#ServerStart#0;class#ServerFrame#0" expanded="false" />
             <element signature="class#ClientHandler#0;class#ServerFrame#0" expanded="false" />
-            <element signature="method#b_endActionPerformed#0;class#ServerFrame#0" expanded="false" />
-            <element signature="method#resetClientWindow#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#b_startActionPerformed#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#b_usersActionPerformed#0;class#ServerFrame#0" expanded="false" />
             <element signature="method#main#0;class#ServerFrame#0" expanded="false" />
@@ -1050,17 +1169,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="434">
-          <caret line="55" column="5" selection-start-line="55" selection-start-column="5" selection-end-line="55" selection-end-column="5" />
+        <state relative-caret-position="17">
+          <caret line="344" column="17" selection-start-line="344" selection-start-column="17" selection-end-line="344" selection-end-column="17" />
           <folding>
-            <element signature="method#initComponents#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#disconnect#0;class#ClientFrame#0" expanded="false" />
+            <element signature="imports" expanded="true" />
+            <element signature="class#clientStart#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#initGUIClient#0;class#ClientFrame#0" expanded="false" />
+            <element signature="class#3229:3377" expanded="false" />
+            <element signature="class#3478:3629" expanded="false" />
+            <element signature="class#4018:4163" expanded="false" />
             <element signature="method#b_connectActionPerformed#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#b_sendActionPerformed#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#processInput#0;class#ClientFrame#0" expanded="false" />
-            <element signature="method#downloadFile#0;class#ClientFrame#0" expanded="false" />
+            <element signature="method#b_disconnectActionPerformed#0;class#ClientFrame#0" expanded="false" />
             <element signature="method#main#0;class#ClientFrame#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/package-info.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
