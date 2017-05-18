@@ -1,9 +1,4 @@
 # Client_Server_Communication
-
-Author: Rabia Abismail 
-ANTALYA INTERNATIONAL UNIVERSITY
-Data: 18/05/2017
-
 This is a client-server communication software, it allows the server to communicate with the client.
 
 The application is developed in Java.
@@ -20,3 +15,7 @@ How to Run:
 
 
 Feel free to contact me if you something looks not clear to you.
+
+Author: Rabia Abismail 
+ANTALYA INTERNATIONAL UNIVERSITY
+Data: 18/05/2017
