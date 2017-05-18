@@ -1,8 +1,9 @@
+# Client_Server_Communication
+
 Author: Rabia Abismail 
 ANTALYA INTERNATIONAL UNIVERSITY
 Data: 18/05/2017
 
-# Client_Server_Communication
 This is a client-server communication software, it allows the server to communicate with the client.
 
 The application is developed in Java.
